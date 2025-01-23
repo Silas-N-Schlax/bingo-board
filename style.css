@@ -1,0 +1,108 @@
+body {
+  background-color: #d3cccc; /* Add a solid background color */
+}
+
+.box, .header {
+  width: 90px;
+  height: 90px;
+  background-color: #dbdbdb; /* Correct the color format */
+  outline: 3px solid black;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s; /* Add transition for zoom animation */
+}
+
+.box:hover {
+  transform: scale(1.1); /* Zoom animation on hover */
+}
+
+.header {
+  background-color: blue;
+  color: white;
+}
+
+.text, .number {
+  text-align: center;
+}
+
+.lastNumber {
+  font-size: 30px;
+  height: 50px;
+  width: 200px;
+  color: black; /* Match button text color */
+  outline: 3px solid #5e0be0;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Add box-shadow transition */
+}
+
+.lastNumber:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Match current number hover shadow */
+  font-size: 30px; /* Ensure font size does not change */
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#buttons button {
+  width: 200px;
+  height: 50px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #5e0be0;
+  color: white;
+  font-size: 1.3rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Add transform transition */
+}
+
+#buttons button:hover {
+  background-color: #3a0a9e;
+  transform: scale(1.1); /* Zoom animation on hover */
+}
+
+#currentNumber {
+  font-size: 50px;
+  font-weight: bold;
+  padding: 20px;
+  border: 5px solid #5e0be0;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#currentNumber:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#currentNumber:active {
+  animation: spin 0.5s linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#nums {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
