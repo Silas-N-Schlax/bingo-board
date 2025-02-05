@@ -273,11 +273,18 @@ function loadBoardState() {
 }
 
 function resetBoard() {
-  localStorage.removeItem('bingoBoardState');
+  const board = document.getElementById('board');
+  const rows = board.getElementsByTagName('tr');
+  for (let i = 1; i < rows.length; i++) {
+    const cells = rows[i].getElementsByTagName('td');
+    for (let j = 0; j < cells.length; j++) {
+      cells[j].classList.remove('marked');
+    }
+  }
   localStorage.removeItem('blackout');
   document.body.style.backgroundColor = '';
   stopConfetti();
-  generateBoard();
+  saveBoardState();
 }
 
 document.addEventListener('DOMContentLoaded', loadBoardState);
